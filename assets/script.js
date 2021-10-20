@@ -8,7 +8,7 @@ var button = document.createElement("button");
 function getCurrentWeather(event) {
     event.preventDefault();
     console.log(city.val());
-    var url = "http://api.openweathermap.org/data/2.5/weather?q=" + city.val() + "&appid=0fca51a84b3c432b1ebeba8243768907&units=imperial";
+    var url = "https://api.openweathermap.org/data/2.5/weather?q=" + city.val() + "&appid=0fca51a84b3c432b1ebeba8243768907&units=imperial";
 
     fetch(url).then(response =>{ 
         return response.json()
@@ -20,7 +20,7 @@ function getCurrentWeather(event) {
         var wind = $("#wind");
         var humidity = $("#humidity")
         var uv = $("#uv")
-        var icon = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
+        var icon = "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
 
         temp.text("Temperature: " + data.main.temp);
         wind.text("Wind: " + data.wind.speed);
@@ -32,42 +32,42 @@ function getCurrentWeather(event) {
 
 function getForecast(event){
     event.preventDefault();
-    var urlForecast = "http://api.openweathermap.org/data/2.5/forecast?q=" + city.val() + "&appid=0fca51a84b3c432b1ebeba8243768907&units=imperial";
+    var urlForecast = "https://api.openweathermap.org/data/2.5/forecast?q=" + city.val() + "&appid=0fca51a84b3c432b1ebeba8243768907&units=imperial";
 
     fetch(urlForecast).then(response =>{
         console.log(response);
         return response.json();
     }).then(data =>{
         console.log(data);
-        var pic1 = "http://openweathermap.org/img/w/" + data.list[0].weather[0].icon + ".png"
+        var pic1 = "https://openweathermap.org/img/w/" + data.list[0].weather[0].icon + ".png"
         var date1 = $("#date1");
         var icon1 = $("#icon1")
         var temp1 = $("#temp1");
         var wind1 = $("#wind1");
         var humidity1 = $("#humidity1");
 
-        var pic2 = "http://openweathermap.org/img/w/" + data.list[1].weather[0].icon + ".png"
+        var pic2 = "https://openweathermap.org/img/w/" + data.list[1].weather[0].icon + ".png"
         var date2 = $("#date2");
         var icon2 = $("#icon2")
         var temp2 = $("#temp2");
         var wind2 = $("#wind2");
         var humidity2 = $("#humidity2");
 
-        var pic3 = "http://openweathermap.org/img/w/" + data.list[2].weather[0].icon + ".png"
+        var pic3 = "https://openweathermap.org/img/w/" + data.list[2].weather[0].icon + ".png"
         var date3 = $("#date3");
         var icon3 = $("#icon3")
         var temp3 = $("#temp3");
         var wind3 = $("#wind3");
         var humidity3 = $("#humidity3");
 
-        var pic4 = "http://openweathermap.org/img/w/" + data.list[3].weather[0].icon + ".png"
+        var pic4 = "https://openweathermap.org/img/w/" + data.list[3].weather[0].icon + ".png"
         var date4 = $("#date4");
         var icon4 = $("#icon4")
         var temp4 = $("#temp4");
         var wind4 = $("#wind4");
         var humidity4 = $("#humidity4");
 
-        var pic5 = "http://openweathermap.org/img/w/" + data.list[4].weather[0].icon + ".png"
+        var pic5 = "https://openweathermap.org/img/w/" + data.list[4].weather[0].icon + ".png"
         var date5 = $("#date5");
         var icon5 = $("#icon5")
         var temp5 = $("#temp5");
