@@ -1,7 +1,9 @@
 var btn = $(".btn");
 var city = $(".form-control");
 var cityName = $("#city-name");
-
+var recentSearch = localStorage.getItem(city.val());
+var searchHistory = $(".button-list");
+var button = document.createElement("button");
 
 function getCurrentWeather(event) {
     event.preventDefault();
@@ -104,11 +106,13 @@ function getForecast(event){
         })
 };
 
-
-
-
-
+function addStorage(){
+    localStorage.setItem("city", city.val());
+    button.innerHTML = city.val();
+    searchHistory.append(button);
+}
 
 
 btn.on("click", getCurrentWeather);
 btn.on("click", getForecast);
+btn.on("click", addStorage);
