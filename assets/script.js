@@ -99,7 +99,7 @@ function getForecast(event){
         humidity4.text("Humidity: " + data.list[3].main.humidity);
 
         date5.text(moment().add(5, "days").format("MM Do YYYY"));
-        icon5.html("<img src=" + pic3 + " />");
+        icon5.html("<img src=" + pic5 + " />");
         temp5.text("Temperature: " + data.list[4].main.temp);
         wind5.text("Wind: " + data.list[4].wind.speed);
         humidity5.text("Humidity: " + data.list[4].main.humidity);
